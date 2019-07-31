@@ -1,7 +1,8 @@
 <?php
 require __DIR__ . "/../vendor/autoload.php";
 
-$window = new \State\Window(new \State\OpenWindowState);
+$hasLock = false;
+$window = new \State\Window($hasLock);
 var_dump($window->isOpen());
 $window->close();
 var_dump($window->isClosed());

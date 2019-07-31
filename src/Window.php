@@ -8,29 +8,35 @@ class Window
      */
     private $state;
 
-    public function __construct(WindowStateInterface $state)
+    /**
+     * @var boolean
+     */
+    public $hasLock;
+
+    public function __construct($hasLock)
     {
-        $this->setState($state);
+        $this->setState(new OpenWindowState);
+        $this->hasLock = $hasLock;
     }
 
     public function open(): void
     {
-        $this->setState($this->state->open());
+        $this->setState($this->state->open($this));
     }
 
     public function close(): void
     {
-        $this->setState($this->state->close());
+        $this->setState($this->state->close($this));
     }
 
     public function lock(): void
     {
-        $this->setState($this->state->lock());
+        $this->setState($this->state->lock($this));
     }
 
     public function unlock(): void
     {
-        $this->setState($this->state->unlock());
+        $this->setState($this->state->unlock($this));
     }
 
     /**

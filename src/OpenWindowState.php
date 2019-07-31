@@ -3,7 +3,7 @@ namespace State;
 
 class OpenWindowState extends AbstractWindowState
 {
-    public function close()
+    public function close(Window $window)
     {
         return new ClosedWindowState;
     }
