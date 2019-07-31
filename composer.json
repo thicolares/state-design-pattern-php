@@ -1,0 +1,15 @@
+{
+    "name": "thiago/state",
+    "authors": [
+        {
+            "name": "Thiago Colares",
+            "email": "thicolares@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "State\\": "src/"
+        }
+    }
+}
